@@ -1,391 +1,1091 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manvitha Reddy | Resume</title>
+    <title>Chennuru Manvitha Reddy | Portfolio</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
         }
 
-        .resume {
-            max-width: 850px;
-            margin: 40px auto;
-            background: white;
-            padding: 45px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+        /* =========================
+           SIDEBAR
+        ========================= */
 
-        /* Header */
-        header {
-            text-align: center;
-            border-bottom: 2px solid #222;
-            padding-bottom: 20px;
-        }
+        .sidebar {
+            width: 280px;
+            height: 100vh;
 
-        header h1 {
-            font-size: 36px;
-            color: #111827;
-            margin-bottom: 8px;
-        }
+            position: fixed;
+            left: 0;
+            top: 0;
 
-        header h3 {
-            font-size: 17px;
-            font-weight: normal;
-            color: #555;
-        }
+            background: #111827;
 
-        .contact {
-            margin-top: 12px;
-            font-size: 14px;
-        }
+            padding: 40px 25px;
 
-        .contact a {
-            color: #2563eb;
-            text-decoration: none;
-            margin: 0 8px;
-        }
+            border-right: 1px solid #1f2937;
 
-        /* Sections */
-        section {
-            margin-top: 28px;
-        }
-
-        section h2 {
-            font-size: 20px;
-            color: #111827;
-            border-bottom: 1px solid #d1d5db;
-            padding-bottom: 6px;
-            margin-bottom: 12px;
-        }
-
-        /* Education */
-        .education h3 {
-            font-size: 17px;
-            color: #222;
-        }
-
-        .education p {
-            color: #555;
-            margin: 3px 0;
-        }
-
-        /* Skills */
-        .skills {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            align-items: center;
+
+            z-index: 1000;
         }
 
-        .skill {
-            background: #eef2ff;
-            color: #3730a3;
-            padding: 7px 15px;
-            border-radius: 5px;
+        .profile-circle {
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #6366f1,
+                #a855f7,
+                #ec4899
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 42px;
+            font-weight: bold;
+
+            color: white;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 0 35px rgba(139,92,246,0.35);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: white;
+            font-size: 21px;
+        }
+
+        .sidebar .role {
+            color: #a78bfa;
             font-size: 14px;
+            text-align: center;
+            margin-top: 5px;
         }
 
-        /* Project */
-        .project {
+        .side-line {
+            width: 80%;
+            height: 1px;
+
+            background: #374151;
+
+            margin: 30px 0;
+        }
+
+        .sidebar nav {
+            width: 100%;
+        }
+
+        .sidebar nav a {
+            display: block;
+
+            color: #9ca3af;
+
+            text-decoration: none;
+
+            padding: 12px 15px;
+
+            margin: 5px 0;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .sidebar nav a:hover {
+            background: #1f2937;
+            color: #a78bfa;
+            transform: translateX(5px);
+        }
+
+        .side-contact {
+            margin-top: auto;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+            word-break: break-word;
+        }
+
+        .side-contact a {
+            color: #a78bfa;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            margin-left: 280px;
+        }
+
+        section {
+            padding: 90px 8%;
+            max-width: 1400px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(124,58,237,0.18),
+                    transparent 35%
+                );
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .small-title {
+            color: #a78bfa;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 15px;
         }
 
-        .project h3 {
-            font-size: 17px;
-            margin-bottom: 5px;
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #818cf8,
+                #c084fc,
+                #f472b6
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
-        /* Languages */
-        .languages {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+        .hero h2 {
+            color: #d1d5db;
+            font-size: 25px;
+            margin-bottom: 20px;
         }
 
-        .language {
-            background: #ecfdf5;
-            color: #047857;
-            padding: 7px 15px;
-            border-radius: 5px;
+        .hero p {
+            color: #9ca3af;
+            max-width: 750px;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            margin-right: 10px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: linear-gradient(
+                90deg,
+                #6366f1,
+                #9333ea
+            );
+
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #6366f1;
+            color: #a78bfa;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.25);
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading span {
+            color: #a78bfa;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+            color: white;
+            margin-top: 5px;
+        }
+
+        .section-heading p {
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr;
+
+            gap: 30px;
+        }
+
+        .about-card,
+        .info-card {
+            background: #111827;
+
+            border: 1px solid #1f2937;
+
+            border-radius: 16px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .about-card:hover,
+        .info-card:hover {
+            border-color: #6366f1;
+            transform: translateY(-5px);
+        }
+
+        .about-card p {
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            color: #a78bfa;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #9ca3af;
+            margin: 8px 0;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+
+            border: 1px solid #1f2937;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #8b5cf6;
+        }
+
+        .skill-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #9ca3af;
             font-size: 14px;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-            color: #777;
-            font-size: 13px;
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 25px;
         }
 
-        /* Mobile */
+        .project-card {
+            background: #111827;
+
+            border: 1px solid #1f2937;
+
+            border-radius: 16px;
+
+            padding: 30px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #8b5cf6;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .project-number {
+            color: #6366f1;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            color: white;
+            margin: 10px 0;
+            font-size: 21px;
+        }
+
+        .project-card p {
+            color: #9ca3af;
+            font-size: 15px;
+        }
+
+        .tools {
+            margin-top: 20px;
+        }
+
+        .tools span {
+            display: inline-block;
+
+            background: #1e1b4b;
+
+            color: #a78bfa;
+
+            padding: 5px 10px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+
+            margin: 3px;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .timeline {
+            position: relative;
+
+            max-width: 900px;
+
+            margin-left: 10px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+
+            top: 0;
+
+            width: 2px;
+
+            height: 100%;
+
+            background: #374151;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 45px;
+
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 0;
+
+            top: 7px;
+
+            width: 18px;
+            height: 18px;
+
+            background: #8b5cf6;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px rgba(139,92,246,0.6);
+        }
+
+        .timeline-item h3 {
+            color: white;
+            font-size: 21px;
+        }
+
+        .timeline-item .institution {
+            color: #a78bfa;
+            font-weight: bold;
+        }
+
+        .timeline-item p {
+            color: #9ca3af;
+        }
+
+
+        /* =========================
+           COURSES
+        ========================= */
+
+        .courses-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 20px;
+        }
+
+        .course {
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #17122b
+                );
+
+            border: 1px solid #312e81;
+
+            border-radius: 15px;
+        }
+
+        .course h3 {
+            color: #c084fc;
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            color: #9ca3af;
+        }
+
+
+        /* =========================
+           INTERESTS
+        ========================= */
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest {
+            padding: 10px 18px;
+
+            border: 1px solid #374151;
+
+            border-radius: 30px;
+
+            color: #c4b5fd;
+
+            background: #111827;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            background: #111827;
+
+            border-top: 1px solid #1f2937;
+
+            text-align: center;
+
+            max-width: none;
+        }
+
+        .contact-section h2 {
+            font-size: 42px;
+            color: white;
+        }
+
+        .contact-section p {
+            color: #9ca3af;
+            margin: 15px auto;
+            max-width: 600px;
+        }
+
+        .email {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #c084fc;
+
+            font-size: 18px;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-left: 280px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background: #080d19;
+
+            color: #6b7280;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                position: relative;
+
+                width: 100%;
+                height: auto;
+
+                padding: 25px;
+
+                border-right: none;
+
+                border-bottom: 1px solid #1f2937;
+            }
+
+            .side-line {
+                margin: 20px 0;
+            }
+
+            .sidebar nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .sidebar nav a {
+                padding: 8px 12px;
+            }
+
+            .side-contact {
+                margin-top: 15px;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            footer {
+                margin-left: 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
         @media (max-width: 600px) {
 
-            .resume {
-                margin: 0;
-                padding: 25px;
+            section {
+                padding: 60px 6%;
             }
 
-            header h1 {
-                font-size: 28px;
+            .hero h1 {
+                font-size: 45px;
             }
 
-            .contact a {
-                display: block;
-                margin: 5px 0;
+            .hero h2 {
+                font-size: 20px;
             }
+
+            .btn {
+                margin-bottom: 10px;
+            }
+
         }
 
-        /* Print */
-        @media print {
-
-            body {
-                background: white;
-            }
-
-            .resume {
-                margin: 0;
-                box-shadow: none;
-            }
-        }
     </style>
+
 </head>
+
 
 <body>
 
-    <div class="resume">
 
-        <!-- HEADER -->
-        <header>
+<!-- =========================
+     SIDEBAR
+========================= -->
 
-            <h1>Manvitha Reddy</h1>
+<aside class="sidebar">
 
-            <h3>
-                B.Tech 2nd Year | CSE - Artificial Intelligence & Machine Learning
-            </h3>
+    <div class="profile-circle">
+        MR
+    </div>
 
-            <div class="contact">
+    <h2>
+        Manvitha Reddy
+    </h2>
 
-                <a href="mailto:chmanvitha2007@gmail.com">
-                    chmanvitha2007@gmail.com
-                </a>
+    <div class="role">
+        Computing & Data Science
+    </div>
 
-                <span>|</span>
+    <div class="side-line"></div>
 
-                <!-- Replace with your phone number -->
-                <span>+91 XXXXXXXXXX</span>
+    <nav>
 
-                <span>|</span>
+        <a href="#home">Home</a>
 
-                <!-- Replace # with your GitHub URL -->
-                <a href="#" target="_blank">
-                    GitHub
-                </a>
+        <a href="#about">About</a>
 
-                <!-- Replace # with your LinkedIn URL -->
-                <a href="#" target="_blank">
-                    LinkedIn
-                </a>
+        <a href="#skills">Skills</a>
 
-            </div>
+        <a href="#projects">Projects</a>
 
-        </header>
+        <a href="#education">Education</a>
 
+        <a href="#courses">Courses</a>
 
-        <!-- CAREER OBJECTIVE -->
-        <section>
+        <a href="#contact">Contact</a>
 
-            <h2>Career Objective</h2>
+    </nav>
 
-            <p>
-                Motivated and enthusiastic B.Tech student specializing in
-                Computer Science and Engineering with Artificial Intelligence
-                and Machine Learning. Interested in programming, data
-                analytics, automation, and emerging technologies. Looking for
-                opportunities to apply technical knowledge, gain practical
-                experience, and contribute to real-world projects.
-            </p>
+    <div class="side-contact">
 
-        </section>
+        <p>📧</p>
 
-
-        <!-- EDUCATION -->
-        <section>
-
-            <h2>Education</h2>
-
-            <div class="education">
-
-                <h3>Bachelor of Technology (B.Tech)</h3>
-
-                <p>
-                    <strong>
-                        Computer Science & Engineering -
-                        Artificial Intelligence & Machine Learning
-                    </strong>
-                </p>
-
-                <p>
-                    Sai University
-                </p>
-
-                <p>
-                    2nd Year | CGPA: <strong>8.5</strong>
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- TECHNICAL SKILLS -->
-        <section>
-
-            <h2>Technical Skills</h2>
-
-            <div class="skills">
-
-                <span class="skill">C</span>
-
-                <span class="skill">Python</span>
-
-                <span class="skill">Data Structures & Algorithms</span>
-
-                <span class="skill">Power BI</span>
-
-                <span class="skill">n8n</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-        <section>
-
-            <h2>Projects</h2>
-
-            <div class="project">
-
-                <h3>Project 1 - Add Your Project</h3>
-
-                <p>
-                    Add your project details here. Mention the project name,
-                    technologies used, and what you contributed.
-                </p>
-
-            </div>
-
-            <div class="project">
-
-                <h3>Project 2 - Add Your Project</h3>
-
-                <p>
-                    Add another academic or personal project here.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- SOFT SKILLS -->
-        <section>
-
-            <h2>Soft Skills</h2>
-
-            <div class="skills">
-
-                <span class="skill">Problem Solving</span>
-
-                <span class="skill">Communication</span>
-
-                <span class="skill">Teamwork</span>
-
-                <span class="skill">Time Management</span>
-
-                <span class="skill">Quick Learning</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- LANGUAGES -->
-        <section>
-
-            <h2>Languages</h2>
-
-            <div class="languages">
-
-                <span class="language">Telugu</span>
-
-                <span class="language">English</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- AREAS OF INTEREST -->
-        <section>
-
-            <h2>Areas of Interest</h2>
-
-            <div class="skills">
-
-                <span class="skill">Artificial Intelligence</span>
-
-                <span class="skill">Machine Learning</span>
-
-                <span class="skill">Data Analytics</span>
-
-                <span class="skill">Automation</span>
-
-                <span class="skill">Software Development</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- DECLARATION -->
-        <section>
-
-            <h2>Declaration</h2>
-
-            <p>
-                I hereby declare that the information provided in this
-                resume is true and correct to the best of my knowledge.
-            </p>
-
-        </section>
-
-
-        <!-- FOOTER -->
-        <footer>
-
-            © 2026 Manvitha Reddy | Resume
-
-        </footer>
+        <a href="mailto:chmanvitha2007@gmail.com">
+            chmanvitha2007@gmail.com
+        </a>
 
     </div>
 
-</body>
-</html>
-```
+</aside>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Hello, I'm
+        </div>
+
+        <h1>
+            Chennuru<br>
+            Manvitha Reddy
+        </h1>
+
+        <h2>
+            Computing & Data Science Student
+        </h2>
+
+        <p>
+            Passionate about Data Analytics, Artificial Intelligence,
+            Machine Learning, Web Development, Power BI and AI Automation.
+            I enjoy transforming ideas into practical technology projects.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn primary">
+                Explore Projects
+            </a>
+
+            <a
+                href="mailto:chmanvitha2007@gmail.com"
+                class="btn secondary">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-heading">
+
+        <span>01 — About</span>
+
+        <h2>About Me</h2>
+
+        <p>Who I am and what I enjoy building</p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <p>
+                I am Chennuru Manvitha Reddy, a student interested
+                in computing, data and emerging technologies.
+            </p>
+
+            <p>
+                My interests include Data Analytics, Artificial
+                Intelligence, Machine Learning, Web Development,
+                Business Intelligence and workflow automation.
+            </p>
+
+            <p>
+                I enjoy learning through hands-on projects and
+                experimenting with tools such as Power BI and n8n
+                to build useful digital solutions.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Quick Info</h3>
+
+            <p>🎓 Computing & Data Science</p>
+
+            <p>📊 Data Analytics</p>
+
+            <p>🤖 AI & Automation</p>
+
+            <p>🌐 Web Development</p>
+
+            <p>📍 India</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-heading">
+
+        <span>02 — Skills</span>
+
+        <h2>Technical Skills</h2>
+
+        <p>Technologies and tools I work with</p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🐍</div>
+
+            <h3>Python</h3>
+
+            <p>
+                Programming, data processing and
+                analytical workflows.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📊</div>
+
+            <h3>Power BI</h3>
+
+            <p>
+                Interactive dashboards, data visualization
+                and business intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">⚙️</div>
+
+            <h3>n8n</h3>
+
+            <p>
+                Workflow automation, integrations
+                and AI-powered workflows.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🌐</div>
+
+            <h3>Web Development</h3>
+
+            <p>
+                HTML, CSS and JavaScript for
+                responsive websites.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🗄️</div>
+
+            <h3>Databases</h3>
+
+            <p>
+                MongoDB, MongoDB Atlas and
+                database fundamentals.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📈</div>
+
+            <h3>Data Analysis</h3>
+
+            <p>
+                Pandas, NumPy, Excel and
+                data visualization.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🤖</div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                AI assistants, chatbots and
+                AI workflow automation.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🔧</div>
+
+            <h3>Developer Tools</h3>
+
+            <p>
+                Git, GitHub, VS Code,
+                Jupyter Notebook and Postman.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-heading">
+
+        <span>03 — Projects</span>
+
+        <h2>Featured Projects</h2>
+
+        <p>Some of my technical work</p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                Hotel Booking & Cancellation Analysis
+            </h3>
+
+            <p>
+                Created an interactive dashboard for analyzing
+                hotel bookings, cancellations, customer types,
+                market segments and distribution channels.
+            </p>
+
+            <div class="tools">
+
+                <span>Power BI</span>
+                <span>Power Query</span>
+                <span>DAX</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                Healthcare Survey Analysis
+            </h3>
+
+            <p>
+                Analyzed healthcare survey data and used
+                visualization techniques to identify useful
+                patterns and trends.
+            </p>
+
+            <div class="tools">
+
+                <span>Power BI</span>
+                <span>Data Analysis</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class
